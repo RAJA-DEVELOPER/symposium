@@ -1,0 +1,271 @@
+/* Basic CSS reset for the navbar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  audio{
+    display: none;
+  }
+  
+  /* Navbar styling */
+  .navbar {
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+   background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+ .no{
+  color: #e3f2fd;
+  font-size: x-large;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  
+ }
+  
+  /* Optional styling for layout */
+
+
+  /* Logo styling */
+.logo img {
+    height: 80px; /* Adjust logo height as needed */
+    width: auto;  /* Keeps logo's aspect ratio */
+  }
+  
+
+ 
+  
+
+
+
+  header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: rgba(0, 0, 0,0.01);
+    transition: background 0.3s;
+  }
+
+  header.scrolled {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+
+
+
+
+
+.logo img {
+    width: 80px;
+    height: auto;
+    
+  
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    transform: translateY(0); 
+    opacity: 1; 
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+  margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: white;
+  color: black;
+  padding: 15px;
+  margin: 0 5px;
+  border-radius: 25px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    width: 30px;
+    position: relative;
+    top: 7px;
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    width: 30px;
+}
+
+/* Video background styling */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Sends the video behind other elements */
+  overflow: hidden;
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the whole background */
+}
+
+
+svg {
+  font-family:'Russo One', sans-serif;
+	position: absolute; 
+	width: 100%; height: 100%;
+  bottom: 200px;
+  right: 10px;
+  padding-top: 100px;
+  
+}
+svg text {
+	text-transform: uppercase;
+	animation: stroke 5s infinite alternate;
+	stroke-width: 1;
+	stroke: #365fa0;
+  font-weight: bold;
+	font-size: 140px;
+  
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(72,138,20,0); stroke: rgba(54,95,160,1);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(72,138,20,0); stroke: rgba(54,95,160,1); }
+	80%  {fill: rgba(72,138,20,0); stroke: rgba(54,95,160,1); stroke-width: 3; }
+	100% {
+		fill: rgba(72,138,204,1); stroke: rgba(54,95,160,0); 
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
+
+
+ 
+@media (max-width: 480px) {
+    
+  .navbar {
+    width: 10px;
+    height: 100px; /* Adjust height as needed */
+  
+    
+    justify-content: space-between;
+    
+    padding: 0 5px;
+ height: fit-content;
+  }
+
+  
+  header {
+    position: relative;
+    top: 0;
+    z-index: 0;
+    width: 0%;
+    background-color: rgba(0, 0, 0,0.01);
+    transition: background 0.3s;
+  }
+
+  header.scrolled {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .logo img{
+    width: 50px; 
+  }
+.no{
+text-align: start;
+white-space: nowrap;
+padding-left: 10px;
+height: fit-content;
+
+}
+.no h2{
+  font-size: x-small;
+
+}
+  
+  .nav-links {
+        display: none;
+        text-align: center;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 5px 0;
+    }
+
+    .nav-links li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 0px;
+    }
+
+    .nav-links li a{
+      color: black;
+      padding: 10px;
+      border-radius: 25px;
+      background-color: white;
+    }
+
+    .nav-links.active {
+      background-color: rgba(0, 0, 0,0.9);
+      margin-top: -15%;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+   
+    svg{
+      padding-top: 0px;
+    }
+    svg text{
+      font-size: 160px;
+    text-align: center;
+    justify-content: center;
+    }
+
+
+    
+}
+
+   
+    
+
+
